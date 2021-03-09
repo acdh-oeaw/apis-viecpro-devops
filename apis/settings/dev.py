@@ -14,9 +14,9 @@ APIS_LIST_VIEWS_ALLOWED = False
 APIS_DETAIL_VIEWS_ALLOWED = False
 FEATURED_COLLECTION_NAME = "FEATURED"
 # MAIN_TEXT_NAME = "ÖBL Haupttext"
-BIRTH_REL_NAME = [64, 152, 3090]
-DEATH_REL_NAME = [153, 3054, 3091]
-APIS_BASE_URI = "https://paas.acdh.oeaw.ac.at/"
+#BIRTH_REL_NAME = [64, 152, 3090]
+#DEATH_REL_NAME = [153, 3054, 3091]
+APIS_BASE_URI = "https://viecpro.acdh.oeaw.ac.at/"
 # APIS_OEBL_BIO_COLLECTION = "ÖBL Biographie"
 
 APIS_SKOSMOS = {
@@ -28,22 +28,11 @@ APIS_SKOSMOS = {
 ALLOWED_HOSTS = re.sub(
     r"https?://",
     "",
-    os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1,paas.acdh-dev.oeaw.ac.at"),
+    os.environ.get("ALLOWED_HOSTS", "localhost,127.0.0.1,viecpro.acdh-dev.oeaw.ac.at"),
 ).split(",")
 # You need to allow '10.0.0.0/8' for service health checks.
 ALLOWED_CIDR_NETS = ["10.0.0.0/8", "127.0.0.0/8"]
 
-HAYSTACK_CONNECTIONS = {
-    "default": {
-        "ENGINE": "haystack.backends.solr_backend.SolrEngine",
-        "URL": "http://paas_solr:8983/solr/paas_solr",
-        "ADMIN_URL": "http://paas_solr:8983/solr/admin/cores",
-    }
-}
-INSTALLED_APPS += [
-    "haystack",
-    "paas_theme",
-]
 
 SECRET_KEY = (
     "d3j@454545()(/)@zlck/6dsaf*#sdfsaf*#sadflj/6dsfk-11$)d6ixcvjsdfsdf&-u35#ayi"
@@ -58,7 +47,7 @@ DATABASES = {}
 
 DATABASES["default"] = dj_database_url.config(conn_max_age=600)
 
-MAIN_TEXT_NAME = "ÖBL Haupttext"
+#MAIN_TEXT_NAME = "ÖBL Haupttext"
 
 LANGUAGE_CODE = "de"
 
