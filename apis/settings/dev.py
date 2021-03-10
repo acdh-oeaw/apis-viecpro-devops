@@ -51,7 +51,6 @@ DATABASES["default"] = dj_database_url.config(conn_max_age=600)
 
 LANGUAGE_CODE = "de"
 
-STATICFILES_DIRS = [BASE_DIR + "/member_images"]
 
 # APIS_COMPONENTS = ['deep learning']
 
